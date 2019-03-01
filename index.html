@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <!-- Include meta tag to ensure proper rendering and touch zooming -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Include jQuery Mobile stylesheets -->
+      <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+      <!-- Include the jQuery library -->
+      <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <!-- Include the jQuery Mobile library -->
+      <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5DAhlOJ_n0D09kNSNEhu2afXqMeqWzs8&libraries=places" async defer></script>
+      <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    </head>
+    <body>
+      <div data-role="page">
+        <div data-role="header">
+          <h1 id="title">全國公廁位置圖</h1>
+          <div data-role="navbar">
+            <ul>
+              <li><a id="index_button" data-icon="home">首頁</a></li>
+              <li><a id="search_button" data-icon="search">搜尋</a></li>
+              <!-- <li><a id="qrcode_button" data-icon="video">QRcode Scanner</a></li> -->
+            </ul>
+          </div>
+        </div>
+        
+        <div id="toilet" data-role="main" class="ui-content">
+          <div id="maperror"></div>
+          <div id="mapholder" style="margin:0px auto;"></div>
+          <button onclick="showtoilet()" style="width:30%;margin:0px auto;margin-top:15px;">找廁所！</button>
+        </div>
+        
+        <div id="search" data-role="main" class="ui-content" style="display:none;">
+          <div id="maperror_search"></div>
+          <input id="search_input" style="width:350px;margin-top:10px;font-size:13px;padding-left:3px;" type="text" placeholder="搜尋">
+          <span id="show"></span>
+          <form>
+            <label for="slider-1">範圍(m):</label>
+            <input type="range" name="slider-1" id="range" min="0" max="100" value="50">
+          </form>
+          <div id="mapholder_search" style="margin:0px auto;"></div>
+          <button id="button_search" style="width:30%;margin:0px auto;margin-top:20px;">搜尋</button>
+        </div>
+        
+        <!-- <div id="qrcode_scanner" data-role="main" class="ui-content" style="display:none;">
+          <div id="example" style="width:450px;height:340px;position:relative;overflow:hidden;border:1px solid #ddd;border-radius:4px;margin:0px auto;"></div>
+					<button style="width:30%;margin:0px auto;margin-top:20px;" onclick="go()">Go</button>
+					<div id="qrContent" style="text-align:center;">
+						<p>No QR Code in sight.</p>
+					</div>
+        </div> -->
+        
+        <div data-role="footer" style="position: absolute;bottom: 0;width: 100%;">
+          <h1>JQuery Mobile</h1>
+        </div>
+      </div> 
+
+      <script type="text/javascript" src="js/main.js"></script>
+      <script type="text/javascript" src="js/effects_saycheese.js"></script>
+      <script type="text/javascript" src="js/say-cheese.js"></script>
+      <script src="js/qr/grid.js"></script>
+    	<script src="js/qr/version.js"></script>
+    	<script src="js/qr/detector.js"></script>
+    	<script src="js/qr/formatinf.js"></script>
+    	<script src="js/qr/errorlevel.js"></script>
+    	<script src="js/qr/bitmat.js"></script>
+    	<script src="js/qr/datablock.js"></script>
+    	<script src="js/qr/bmparser.js"></script>
+    	<script src="js/qr/datamask.js"></script>
+    	<script src="js/qr/rsdecoder.js"></script>
+    	<script src="js/qr/gf256poly.js"></script>
+    	<script src="js/qr/gf256.js"></script>
+    	<script src="js/qr/decoder.js"></script>
+    	<script src="js/qr/qrcode.js"></script>
+    	<script src="js/qr/findpat.js"></script>
+    	<script src="js/qr/alignpat.js"></script>
+    	<script src="js/qr/databr.js"></script>
+    </body>
+</html>
